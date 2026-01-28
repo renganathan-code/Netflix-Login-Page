@@ -50,7 +50,8 @@ app.post("/signin",function(req,res)
     
 })
 
-app.listen(3000,function()
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,function()
 {
     console.log("port 3000,run successfully")
 })
