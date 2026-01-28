@@ -9,19 +9,33 @@ function Signin(props)
     const Navigate = useNavigate()
     const [newuser,setnewuser] = useState("")
     const [newpass,setnewpass] = useState("")
+    const[userError,setUserError] = useState(false)
+    const [passError,setpassError] = useState(false)
 
     function handleuser(event)
     {
         setnewuser(event.target.value)
+        setUserError(false)
     }
 
     function handlepass(event)
     {
         setnewpass(event.target.value)
+        setpassError(false)
     }
 
     function addUser()
     {
+        if(newuser.trim() === "")
+        {
+            setUserError(true)
+        }
+
+        if(newpass.trim() === "")
+        {
+            setpassError(true)
+        }
+
         let loginDetails = axios.post("http://localhost:3000/signin",{"username":newuser,"password":newpass})
         loginDetails.then(function(response)
         {
@@ -44,9 +58,9 @@ function Signin(props)
                 <h1>Enter Your info to sign in</h1>
                 <h4>Or get started with a new account</h4>
                 <input onChange={handleuser} type="email" placeholder="Enter your email address" required/>
-                {newuser?<p style={{color:"red"}}>Require to Email address</p>:""}
+                {userError&&<p style={{color:"red"}}>Require to Email address</p>}
                 <input onChange={handlepass} type="password" placeholder='Enter your password' required/>
-                {newpass?<p style={{color:"red"}}>Require to password</p>:""}
+                {passError&&<p style={{color:"red"}}>Require to password</p>}
                 <button type='submit' onClick={addUser}>Signin</button>
                 <p>You already have an account?<Link to={"/"}> Login</Link></p>
             </div>

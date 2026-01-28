@@ -8,28 +8,32 @@ function Login(props)
 {
     const Navigate = useNavigate()
     const [username,setusername] = useState("")
+    const[userError,setUserError] = useState(false)
     const [pass,setpass] = useState("")
+    const [passError,setpassError] = useState(false)
     
     function handleuser(event)
     {
         setusername(event.target.value)
+        setUserError(false)
     }
     
     function handlepass(event)
     {
         setpass(event.target.value)
+        setpassError(false)
     }
 
     function checkuser()
     {
-        if(username === "")
+        if(username.trim() === "")
         {
-            setusername(false)
+            setUserError(true)
         }
 
-        if(pass === "")
+        if(pass.trim() === "")
         {
-            setpass(false)
+            setpassError(true)
         }
 
         //let loginDetails = axios.get(`http://localhost:3000/login?username=${username}&password=${pass}`)
@@ -75,9 +79,9 @@ function Login(props)
                 <div className="login_container_s2">
                     <p>Ready to Watch?Enter email to create or restart you membership.</p>
                     <input onChange={handleuser} type="email" placeholder="Email address" required /> <br />
-                    {username?<p style={{color:"red"}}>Require to Email address</p>:<p></p>}
+                    {userError&&<p style={{color:"red"}}>Require to Email address</p>}
                     <input onChange={handlepass} type="password" placeholder="Email password" required/> <br />
-                    {pass?<p style={{color:"red"}}>Require to password</p>:<p></p>}
+                    {passError&&<p style={{color:"red"}}>Require to password</p>}
                     <button type="submit" onClick={checkuser}>Get Started  ➜ </button>
                 </div>
             </div>
