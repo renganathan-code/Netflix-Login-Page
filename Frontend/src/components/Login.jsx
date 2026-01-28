@@ -27,22 +27,13 @@ function Login(props)
 
     function checkuser()
     {
-        if(username.trim() === "")
-        {
-            setUserError(true)
-        }
-
-        if(pass.trim() === "")
-        {
-            setpassError(true)
-        }
 
         //let loginDetails = axios.get(`http://localhost:3000/login?username=${username}&password=${pass}`)
         let loginDetails = axios.post(`${API_URL}/login`,{"username":username,"password":pass})
         loginDetails.then(function(response)
         {
             console.log(response);
-            if(response.data !== false){
+            if(response.data == true){
                 Navigate("/landing")
             }
             else{
