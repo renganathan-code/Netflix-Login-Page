@@ -42,7 +42,7 @@ function Login(props)
         loginDetails.then(function(response)
         {
             console.log(response);
-            if(response.data == true){
+            if(response.data === true){
                 Navigate("/landing")
             }
             else{
