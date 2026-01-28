@@ -9,20 +9,17 @@ function Login(props)
 {
     const Navigate = useNavigate()
     const [username,setusername] = useState("")
-    const[userError,setUserError] = useState(false)
     const [pass,setpass] = useState("")
     const [passError,setpassError] = useState(false)
     
     function handleuser(event)
     {
         setusername(event.target.value)
-        setUserError(false)
     }
     
     function handlepass(event)
     {
         setpass(event.target.value)
-        setpassError(false)
     }
 
     function checkuser()
@@ -74,7 +71,7 @@ function Login(props)
                     {userError&&<p style={{color:"red"}}>Require to Email address</p>}
                     <input onChange={handlepass} type="password" placeholder="Email password" required/> <br />
                     {passError&&<p style={{color:"red"}}>Require to password</p>}
-                    <button type="submit" onClick={checkuser}>Get Started  ➜ </button>
+                    <button onClick={checkuser}>Get Started  ➜ </button>
                 </div>
             </div>
         </div>
