@@ -3,6 +3,7 @@ import Netflixlogo from "../assets/images/netflix-logo.png"
 import {Link, Navigate, useNavigate} from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Login(props)
 {
@@ -37,7 +38,7 @@ function Login(props)
         }
 
         //let loginDetails = axios.get(`http://localhost:3000/login?username=${username}&password=${pass}`)
-        let loginDetails = axios.post("http://localhost:3000/login",{"username":username,"password":pass})
+        let loginDetails = axios.post(`${API_URL}/login`,{"username":username,"password":pass})
         loginDetails.then(function(response)
         {
             console.log(response);
