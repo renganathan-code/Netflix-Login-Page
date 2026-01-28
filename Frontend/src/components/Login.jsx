@@ -28,16 +28,18 @@ function Login(props)
     function checkuser()
     {
         let isValid = true;
-        
-        if (newuser.trim() === "") {
-            setUserError(true);
-            isValid = false;
-        }
-        if (newpass.trim() === "") {
-            setpassError(true);
-            isValid = false;
-        }
-        if (!isValid) return;
+
+    if (username.trim() === "") {
+        setUserError(true);
+        isValid = false;
+    }
+
+    if (pass.trim() === "") {
+        setpassError(true);
+        isValid = false;
+    }
+
+    if (!isValid) return; 
 
         //let loginDetails = axios.get(`http://localhost:3000/login?username=${username}&password=${pass}`)
         let loginDetails = axios.post(`${API_URL}/login`,{"username":username,"password":pass})
