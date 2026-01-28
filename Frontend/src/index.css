@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.netflix_logo{
+    width: 10%;
+    position: absolute;
+    top: 2vh;
+    left: 6vw;
+    z-index: 1;
+}
+
+.bg_black{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+}
+
+.netflix_bg{
+    height: 100vmax;
+    width: 100vmax;
+}
+
+.signin{
+    position: absolute;
+    top: 2%;
+    right: 7%;
+}
+
+.lng_btn{
+    padding: 6px 16px;
+    background-color: transparent;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.lng_btn option{
+    color: black;
+}
+
+.signin_btn{
+    background-color: red;
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 3px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.login_container{
+    text-align: center;
+    width: 45%;
+    padding: 30px;
+    position: absolute;
+    right: 26%;
+    top: 13%;
+    color: white;
+}
+
+.login_container_s1 h1{
+    padding-bottom: 5px;
+    font-size: 56px;
+}
+
+.login_container_s1 h3{
+    padding-bottom: 30px;
+}
+
+.login_container_s2 input{
+    width: 40%;
+    padding: 18px;
+    border: none;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.login_container_s2 button{
+    width: 45%;
+    padding: 16px 16px;
+    font-size: medium;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 1280px)
+{
+    body{
+        font-size: 16px;
+    }
+    .login_container_s1 h1{
+    font-size: 48px;
+}
+.login_container_s2 input{
+    width: 70%;
+}
+
+.login_container_s2 button{
+    width: 75%;
+}
+}
+
+@media screen and (max-width: 1024px) {
+
+    body{
+        font-size: 12px;
+    }
+
+  .netflix_logo{
+    width: 20%;
+    position: absolute;
+    top: 2vh;
+    left: 6vw;
+    z-index: 1;
+}
+
+.signin{
+    position: absolute;
+    top: 3%;
+    right: 7%;
+}
+
+.login_container{
+    width: 70%;
+    position: absolute;
+    right: 8%;
+    top: 15%;
+}
+
+.login_container_s1 h1{
+    font-size: 32px;
+}
+
+.login_container_s2 input{
+    width: 70%;
+}
+
+.login_container_s2 button{
+    width: 75%;
+}
+}
