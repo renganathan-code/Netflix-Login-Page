@@ -6,7 +6,7 @@
 body{
     position: relative;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,14 +22,21 @@ body{
     background-color: black;
     height: 100vh;
     width: 100vw;
-    opacity: 0.7;
-    position: absolute;
+    opacity: 0.6;
+    position: fixed;
     top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .netflix_bg{
-    height: 100vmax;
-    width: 100vmax;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
 }
 
 .signin{
@@ -61,12 +68,12 @@ body{
 }
 
 .login_container{
-    text-align: center;
     width: 45%;
     padding: 30px;
     position: absolute;
     right: 26%;
     top: 13%;
+    text-align: center;
     color: white;
 }
 
@@ -80,7 +87,8 @@ body{
 }
 
 .login_container_s2 input{
-    width: 40%;
+    width: 100%;
+    max-width: 420px;
     padding: 18px;
     border: none;
     border: solid black 1px;
@@ -91,7 +99,8 @@ body{
 }
 
 .login_container_s2 button{
-    width: 45%;
+    width: 100%;
+    max-width: 420px;
     padding: 16px 16px;
     font-size: medium;
     background-color: red;

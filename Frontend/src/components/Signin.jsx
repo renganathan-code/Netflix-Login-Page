@@ -59,8 +59,10 @@ function Signin(props)
                 <h1>Enter Your info to sign in</h1>
                 <h4>Or get started with a new account</h4>
                 <input onChange={handleuser} type="email" placeholder="Enter your email address" required/>
+                <p></p>
                 {userError&&<p style={{color:"red"}}>Require to Email address</p>}
                 <input onChange={handlepass} type="password" placeholder='Enter your password' required/>
+                <p></p>
                 {passError&&<p style={{color:"red"}}>Require to password</p>}
                 <button type='submit' onClick={addUser}>Signin</button>
                 <p>You already have an account?<Link to={"/"}> Login</Link></p>
